@@ -1,0 +1,38 @@
+﻿spring
+  profiles:
+    active:
+    - dev
+---    
+server:
+  port: 8003
+
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-config-eureka-client
+eureka:
+  instance:
+    hostname: eureka8003.com
+  client: 
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8003.com:8003/eureka/
+---
+server:
+  port: 8003
+
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-config-eureka-client
+
+eureka:
+  instance:
+    hostname: eureka8003.com
+  client: 
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8003.com:8003/eureka/
+    
